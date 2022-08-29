@@ -18,7 +18,7 @@ function onScroll() {
 
 // =============== MENU ===============
 (function activeMenuOnCurrentPage(){
-    const page = `.${location.pathname}`
+    const page = `/SavPetsFrontend/panel.html${location.pathname}`
 
     const headerListOption = document.querySelector(`.header-list_option[href="${page}"]`)
     if(headerListOption.textContent == 'cadastre-se') {
