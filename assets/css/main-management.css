@@ -87,6 +87,8 @@ img{
 
     display: flex;
     flex-direction: column;
+
+    transition: 300ms;
 }
 
 .header-content::after{
@@ -112,11 +114,15 @@ img{
 }
 
 .header-content_menu{
-    padding: 10.8rem 2.2rem 13.2rem 2.2rem;
-
     display: flex;
     flex-direction: column;
-    gap: 11.2rem;
+    
+    width: max-content;
+    height: calc(100vh - 24rem);
+
+    position: relative;
+    top: 15rem;
+    left: 2.2rem;
 }
 
 .header-content_menu ul{
@@ -131,11 +137,14 @@ img{
     gap: 1.2rem;
 
     font-weight: 500;
-    color: #fff;
     line-height: 150%;
 }
 
-.header-content_menu .menu-management-active{
+.header-content_menu .header-menu_span{
+    color: #fff;
+}
+
+.header-content_menu .menu-management-active .header-menu_span{
     color: var(--secondary-color);
     font-weight: 700;
     letter-spacing: 0.08rem;
@@ -145,12 +154,13 @@ img{
     fill: var(--secondary-color);
 }
 
-.header-content_menu a:hover{
+.header-content_menu a:hover,
+.header-menu_span:hover{
     color: var(--secondary-color);
     opacity: .6;
 }
 
-.header-content_quit:last-child:hover{
+.header-content_quit .header-menu_span:last-child:hover{
     color: red;
     opacity: .6;
 }
@@ -172,7 +182,10 @@ img{
 }
 
 .header-content_quit{
-    margin-inline: auto;
+    display: flex;
+    position: absolute;
+    bottom: 2rem;
+    left: 60%;
 }
 
 /* =============== TOP BAR SETTINGS =============== */
@@ -244,10 +257,11 @@ img{
     align-items: center;
     gap: 4rem;
 
+    padding-inline: 5rem;
     min-height: calc(100vh - var(--height-top-bar));
 }
 
-.main-content img{
+.main-content_img-default{
     width: 40rem;
 }
 
@@ -256,4 +270,64 @@ img{
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 130%;
+}
+
+/* =============== RESPONSIVE SETTINGS =============== */
+@media (max-width: 768px) {
+    :root{
+        --width-nav: 8rem;
+    }
+
+    .header-content{
+        padding-inline: auto;
+    }
+    
+    .header-content_logo,
+    .header-menu_span{
+        opacity: 0;
+        visibility: hidden;
+        width: 0;
+    }
+
+    .header-content_menu{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .header-content_menu a{
+        gap: 0;
+    }
+
+    .header-content_quit{
+        bottom: 2rem;
+        left: auto;
+    }
+
+    .main-content_img-default{
+        width: 80%;
+    }
+}
+
+@media (max-width: 500px) {
+    .top-bar{
+        padding-inline: 1.5rem;
+    }
+}
+
+@media (max-width: 375px) {
+    :root{
+        --width-nav: 5rem;
+    }
+    
+    .top-bar{
+        justify-content: center;
+    }
+    
+    .top-bar_path{
+        display: none;
+    }
+
+    .main-content_img-default{
+        width: 100%;
+    }
 }
