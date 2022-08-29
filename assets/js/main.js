@@ -7,7 +7,7 @@ function onScroll() {
     const menu = document.querySelector('#header')
     const AlreadyHaveClass = menu.classList.contains('fixed-menu')
 
-    if((scrollY > 10) && (!AlreadyHaveClass)) {
+    if((scrollY >= 0) && (!AlreadyHaveClass)) {
         changeColorMenuOnScroll(menu)
     }
 
@@ -18,7 +18,7 @@ function onScroll() {
 
 // =============== MENU ===============
 (function activeMenuOnCurrentPage(){
-    const page = `/SavPetsFrontend/panel.html${location.pathname}`
+    const page = `./${bodyElement.classList}.html`
 
     const headerListOption = document.querySelector(`.header-list_option[href="${page}"]`)
     if(headerListOption.textContent == 'cadastre-se') {

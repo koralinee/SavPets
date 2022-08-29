@@ -343,7 +343,7 @@ img{
         top: 0;
         right: -100vw;
 
-        width: 90vw;
+        width: 50vw;
         height: 100vh;
 
         padding: 12rem 2.5rem 0 0;
@@ -375,30 +375,14 @@ img{
 
         font-size: 1.6rem;
     }
-/* 
-    .menu-mobile{
-        position: fixed;
-        right: 0;
-        top: 0;
 
-        width: 90vw;
-        height: 100vh;
-
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: center;
-        gap: 2.5rem;
-
-        background-color: var(--secondary-color);
-    }
-
-    .menu-mobile a{
-        color: #fff;
-    } */
 }
 
 @media (max-width: 482px){
+    .menu-mobile{
+        width: 70vw;
+    }
+
     .footer-container-group{
         margin-bottom: 0;
     }
@@ -431,6 +415,10 @@ img{
 }
 
 @media (max-width: 320px){
+    .menu-mobile{
+        width: 90vw;
+    }
+
     .footer-end_item{
         flex-direction: column;
         text-align: center;
