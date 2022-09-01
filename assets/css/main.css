@@ -59,7 +59,7 @@ h2{
     line-height: 120%;
 }
 
-h2{
+h3{
     font-size: 2.4rem;
     line-height: 130%;
 
@@ -89,7 +89,7 @@ h4{
     filter: brightness(1.2);
 }
 
-.content .btn{
+.btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,10 +112,14 @@ h4{
     transition: 300ms;
 }
 
-.content .btn-ghost{
+.btn-ghost{
     background-color: transparent;
     color: var(--secondary-color);
     border-color: var(--secondary-color);
+}
+
+.btn:hover{
+    filter: brightness(1.2);
 }
 
 img{
@@ -129,6 +133,7 @@ img{
 }
 
 #header.content{
+    position: fixed;
     padding-block: 0;
     background-color: var(--primary-color);
 
@@ -138,6 +143,7 @@ img{
 
 #header.fixed-menu{
     position: fixed;
+    z-index: 1000;
     background-color: var(--secondary-color);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -207,7 +213,7 @@ img{
 
 .header-container .btn-ghost:hover{
     background-color: var(--primary-color);
-    filter: brightness(1.2);
+    filter: brightness(1.1);
 }
 
 .fixed-menu .btn-ghost:hover{
@@ -216,7 +222,6 @@ img{
 
 .header-container .btn.menu-active-btn{
     background-color: var(--primary-color);
-    filter: brightness(1.2);
 }
 
 .fixed-menu .btn.menu-active-btn{
@@ -313,6 +318,12 @@ img{
 }
 
 /* =============== RESPONSIVE SETTINGS =============== */
+@media (max-width: 1100px) {
+    .footer-group_item{
+        margin-bottom: 6rem;
+    }
+}
+
 @media (max-width: 825px) {
     .header-container_list,
     .header-container .btn-desktop{
