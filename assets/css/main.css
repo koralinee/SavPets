@@ -9,6 +9,7 @@
 
     --height-nav: 7.2rem;
     --menu-links-color: hsl(180, 14%, 97%);
+    --placeholder-color: hsl(219, 8%, 35%);
 
     --footer-color: hsl(211, 69%, 10%);
     --footer-text-color: hsl(205, 22%, 85%);
@@ -124,6 +125,21 @@ h4{
 
 img{
     max-width: 100%;
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+    width: 1rem;
+    background-color: #a1a6af;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #808793;
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: #71757e;
 }
 
 /* =============== HEADER SETTINGS =============== */
