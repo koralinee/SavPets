@@ -15,3 +15,10 @@ function openMobileMenu(burger){
     burger.classList.toggle('open')
     headerContent.classList.toggle('side-menu--management-active')
 }
+
+// =============== DATATABLES SETTINGS ===============
+$(document).ready(function () {
+    $('#example').DataTable({
+        responsive: true
+    });
+});

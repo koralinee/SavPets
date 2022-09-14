@@ -77,13 +77,38 @@ img{
     max-width: 100%;
 }
 
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    
+    padding: 1rem 2rem;
+
+    background: var(--primary-color);
+    border-radius: .4rem;
+    cursor: pointer;
+    transition: 300ms;
+
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.btn:hover{
+    filter: brightness(1.1);
+}
+
 /* =============== HEADER SETTINGS =============== */
 .header-content{
-    position: fixed;
+    position: absolute;
     background-color: var(--primary-color);
 
     width: var(--width-nav);
-    height: 100vh;
+    height: fit-content;
 
     display: flex;
     flex-direction: column;
@@ -131,14 +156,14 @@ img{
 .header-content_menu{
     display: flex;
     
-    padding-block: 5rem;
+    padding-block: 2rem;
     width: 100%;
 }
 
 .header-content_menu ul{
     display: flex;
     flex-direction: column;
-    gap: 3.5rem;
+    gap: 1.2rem;
 
     margin-inline: min(2.5rem, 50%);
 }
@@ -239,18 +264,6 @@ img{
     color: var(--secondary-color);
 }
 
-.top-bar-options a:first-child:after{
-    content: '';
-    display: block;
-    
-    height: 5rem;
-    width: .1rem;
-    margin-inline: 1.5rem;
-
-    background-color: var(--paragraph-color);
-    opacity: .5;
-}
-
 .top-bar-options a svg path{
     width: 1.7rem;
     height: 1.7rem;
@@ -273,6 +286,11 @@ img{
     min-height: calc(100vh - var(--height-top-bar));
 }
 
+.main-content.main-register{
+    justify-content: flex-start;
+    margin-top: 2.5rem;
+}
+
 .main-content_img-default{
     width: min(40rem, 100%);
 }
@@ -282,6 +300,26 @@ img{
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 130%;
+}
+
+.main-content_box{
+    display: flex;
+    flex-direction: column;
+
+    padding: 2.4rem;
+    margin-inline: 5rem;    
+
+    min-height: 38rem;
+    width: 100%;
+    
+    background-color: #fff;
+    border: 1px solid rgba(82, 87, 96, 0.2);
+    border-radius: .4rem;
+}
+
+.main-content_box > .btn{
+    align-self: flex-end;
+    margin-bottom: 2.4rem;
 }
 
 /* =============== RESPONSIVE SETTINGS =============== */
