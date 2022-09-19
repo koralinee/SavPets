@@ -10,6 +10,7 @@
     --width-nav: 24rem;
     --height-top-bar: 8.4rem;
     --menu-links-color: hsl(180, 14%, 97%);
+    --btn-red-color: hsl(0, 100%, 73%);
 }
 
 *{
@@ -35,30 +36,6 @@ body{
 .wrapper{
     margin-left: var(--width-nav);
 }
-/* 
-h1{  
-    font-size: 5.2rem;
-    line-height: 130%;
-    color: #fff;
-}
-
-h2{  
-    font-size: 3.5rem;
-    line-height: 120%;
-}
-
-h2{
-    font-size: 2.4rem;
-    line-height: 130%;
-
-    margin-bottom: 6.2rem;
-}
-
-h4{  
-    font-size: 1.8rem;
-    line-height: 140%;
-    color: var(--secondary-color);
-} */
 
 p{
     line-height: 150%;
@@ -66,6 +43,8 @@ p{
 
 a{
     transition: 300ms;
+    text-decoration: none;
+    color: var(--paragraph-color);
 }
 
 a:hover{
@@ -83,6 +62,7 @@ img{
     align-items: center;
     gap: .5rem;
     
+    width: fit-content;
     padding: 1rem 2rem;
 
     background: var(--primary-color);
@@ -99,7 +79,43 @@ img{
 }
 
 .btn:hover{
+    background: var(--primary-color);
+    color: #fff;
     filter: brightness(1.1);
+}
+
+.btn-cancel{
+    background-color: var(--btn-red-color);
+}
+
+.btn-cancel:hover{
+    background-color: var(--btn-red-color);
+    color: #fff;
+    filter: brightness(1.2);
+}
+
+ul{
+    padding-left: 0;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+    width: 1rem;
+    background-color: #a1a6af;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #808793;
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: #71757e;
 }
 
 /* =============== HEADER SETTINGS =============== */
@@ -209,20 +225,11 @@ img{
     fill: var(--secondary-color);
 }
 
-.header-content_quit{
-    position: absolute;
-    bottom: 5rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.header-content_quit:last-child:hover svg path{
-    fill: red;
-}
-
-.header-content_quit .header-menu_span:last-child:hover{
+.header-content_menu li:last-child a:hover span,
+.header-content_menu li:last-child a:hover svg path{
     color: red;
-    opacity: .6;
+    fill: red;
+    opacity: 1;
 }
 
 /* =============== TOP BAR SETTINGS =============== */
@@ -244,6 +251,15 @@ img{
     line-height: 130%;
     color: var(--secondary-color);
 }
+
+.top-bar_path:not(:first-child)::before{
+    content: '/';
+    margin-inline: 0 .4rem;
+    color: var(--paragraph-color);
+    cursor: auto;
+}
+
+.top-bar_path::after
 
 .top-bar-options{
     display: flex;
@@ -288,7 +304,7 @@ img{
 
 .main-content.main-register{
     justify-content: flex-start;
-    margin-top: 2.5rem;
+    margin-block: 2.5rem;
 }
 
 .main-content_img-default{
@@ -322,14 +338,37 @@ img{
     margin-bottom: 2.4rem;
 }
 
+.column-action > a > svg,
+.column-action > svg{
+    cursor: pointer;
+    width: 3rem;
+    height:  2.5rem;
+
+    transition: 300ms;
+}
+
+.column-action > a > svg:hover,
+.column-action > svg:hover{
+    filter: brightness(1);
+}
+
+.column-action:last-child > a > svg,
+.column-action:last-child > svg{
+    margin-top: .2rem;
+    margin-left: -.5rem;
+    width: 2.8rem;
+    height:  2.4rem;
+}
+
 /* =============== RESPONSIVE SETTINGS =============== */
 @media (max-width: 768px) {
     :root{
-        --width-nav: min(10rem, 20%);
+        --width-nav: min(10rem, 18%);
     }
 
     .header-content{
         padding-inline: auto;
+        height: 130vh;
     }
 
     .burger{
@@ -345,11 +384,18 @@ img{
 
     .header-content_menu{
         justify-content: center;
+        margin-top: -5rem;
     }
 
     .header-content_menu a{
         justify-content: center;
         gap: 0;
+        height: 2.5rem;
+    }
+
+    .header-content_menu a > svg{
+        width: 2rem;
+        height: 2rem;
     }
     
     .side-menu--management-active{
@@ -382,17 +428,62 @@ img{
 }
 
 @media (max-width: 500px) {
+    .header-content{
+        padding-inline: auto;
+        height: 144vh;
+    }
+
+    .btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        
+        width: min-content;
+        padding: .5rem 1rem;
+
+        font-size: 1.2rem;
+    }
+
+    .btn > svg{
+        width: 1.5rem;
+    }
+
+    .main-content{
+        padding-inline: 1rem;
+    }
+    
     .top-bar{
         padding-inline: 1.5rem;
     }
 }
 
 @media (max-width: 375px) {    
+    .header-content{
+        padding-inline: auto;
+    }
+    
     .top-bar{
         justify-content: center;
     }
     
     .top-bar_path{
         display: none;
+    }
+
+    .main-content_box{
+        padding: 2.4rem 1rem;
+    }
+
+    label{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 325) {    
+    .header-content{
+        height: 200vh;
     }
 }

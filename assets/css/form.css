@@ -3,6 +3,11 @@
     width: min(36rem, 90%);
 }
 
+.main-container_form > .form{
+    width: min(80rem, 90%);
+    margin-inline: auto;
+} 
+
 .form-instruction{
     text-align: right;
     margin-bottom: 1.2rem;
@@ -95,6 +100,11 @@
     cursor: pointer;
 }
 
+.main-container_form > .form > .btn{
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
 /* =============== PUBLIC PAGES SETTINGS =============== */
 .container-form{
     display: flex;
@@ -107,4 +117,18 @@
     border-left: none;
     border-top: none;
     border-right: none;
+}
+
+/* =============== RESPONSIVE SETTINGS =============== */
+@media (max-width: 500px) {
+    .form > .btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        
+        max-width: 100%;
+        padding: .8rem 1.2rem;
+        font-size: 1.2rem;
+    }
 }
