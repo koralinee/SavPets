@@ -98,11 +98,6 @@ ul{
     padding-left: 0;
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar{
     width: 1rem;
@@ -193,11 +188,11 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .header-content_menu a{
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     gap: 1.2rem;
 
     font-weight: 500;
-    line-height: 150%;
+    line-height: 120%;
 }
 
 .header-content_menu .header-menu_span{
@@ -214,12 +209,6 @@ input[type="number"]::-webkit-inner-spin-button {
     fill: var(--secondary-color);
 }
 
-.header-content_menu a:hover,
-.header-menu_span:hover{
-    color: var(--secondary-color);
-    opacity: .6;
-}
-
 .header-content_menu a svg{
     width: 2.2rem;
 }
@@ -228,8 +217,11 @@ input[type="number"]::-webkit-inner-spin-button {
     transition: 300ms;
 }
 
+.header-content_menu a:hover span,
 .header-content_menu a:hover svg path{
+    color: var(--secondary-color);
     fill: var(--secondary-color);
+    opacity: .6;
 }
 
 .header-content_menu li:last-child a:hover span,
@@ -345,9 +337,12 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-bottom: 2.4rem;
 }
 
+.column-action{
+    cursor: pointer;
+}
+
 .column-action > a > svg,
 .column-action > svg{
-    cursor: pointer;
     width: 3rem;
     height:  2.5rem;
 
@@ -375,7 +370,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
     .header-content{
         padding-inline: auto;
-        height: 130vh;
     }
 
     .burger{
@@ -406,11 +400,12 @@ input[type="number"]::-webkit-inner-spin-button {
     }
     
     .side-menu--management-active{
-        width: min(20rem, 75%);
+        width: min(26rem, 85%);
     }
 
     .side-menu--management-active .header-content_menu{
         justify-content: flex-start;
+        margin-top: 0;
     }
 
     .side-menu--management-active .header-content_begin{
@@ -420,6 +415,11 @@ input[type="number"]::-webkit-inner-spin-button {
     .side-menu--management-active .burger{
         align-self: center;
     }
+
+    .side-menu--management-active .header-content_menu ul{
+        gap: 2rem;
+    }
+    
 
     .side-menu--management-active .header-content_menu a {
         justify-content: flex-start;
@@ -435,11 +435,6 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 @media (max-width: 500px) {
-    .header-content{
-        padding-inline: auto;
-        height: 144vh;
-    }
-
     .btn{
         display: flex;
         justify-content: center;
@@ -465,11 +460,7 @@ input[type="number"]::-webkit-inner-spin-button {
     }
 }
 
-@media (max-width: 375px) {    
-    .header-content{
-        padding-inline: auto;
-    }
-    
+@media (max-width: 375px) {        
     .top-bar{
         justify-content: center;
     }
@@ -486,11 +477,5 @@ input[type="number"]::-webkit-inner-spin-button {
         display: flex;
         flex-direction: column;
         max-width: 100%;
-    }
-}
-
-@media (max-width: 325) {    
-    .header-content{
-        height: 200vh;
     }
 }

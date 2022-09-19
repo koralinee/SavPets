@@ -68,6 +68,37 @@
     font-weight: 600;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="date"]::before {
+    opacity: .6;
+    font: 1.4rem;
+    font-weight: 600;
+	color: #525760;
+    font-family: 'Poppins', sans-serif;
+	content: attr(placeholder);
+}
+
+input[type="date"] {
+	color: #fff;
+}
+
+input[type="date"]:focus,
+input[type="date"]:valid {
+	opacity: 1;
+    font-weight: 400;
+	color: #525760;
+    font-family: 'Poppins', sans-serif;
+}
+
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+	content: "" !important;
+}
+
 .form-dision_textarea{
     font-size: 1.4rem;
 

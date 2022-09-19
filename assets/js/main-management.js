@@ -49,7 +49,7 @@ quitOption.forEach(option => {
                 title: 'Saindo da sessão'
                 })
     
-                setTimeout(() => window.location.href = "../index.html", 3100)
+                setTimeout(() => window.location.href = "./index.html", 3100)
             }
         })
     })
@@ -64,27 +64,28 @@ $(document).ready(function () {
 
 // =============== ACTIONS TABLE SETTINGS ===============
 const deleteBtn = document.querySelectorAll('.column-action_delete')
-console.log(deleteBtn)
 
 deleteBtn.forEach(btn => {
-    btn.addEventListener('click', () =>{
-        Swal.fire({
-            title: 'Tem certeza?',
-            text: "Você não poderá reverter isso!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#a4cbe0',
-            cancelButtonColor: '#ff7575',
-            cancelButtonText: 'Cancelar',
-            confirmButtonText: 'Sim, deletar!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire(
-                    'Deletado!',
-                    'Registro apagado com sucesso.',
-                    'success'
-                )
-            }
-        })
-    })
+    btn.addEventListener('click', onClickDeleteBtn)
 });
+
+function onClickDeleteBtn() {
+    Swal.fire({
+        title: 'Tem certeza?',
+        text: "Você não poderá reverter isso!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#a4cbe0',
+        cancelButtonColor: '#ff7575',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Sim, deletar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                'Deletado!',
+                'Registro apagado com sucesso.',
+                'success'
+            )
+        }
+    })
+}

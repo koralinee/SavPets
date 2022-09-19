@@ -70,27 +70,3 @@ function openMobileMenu(burger){
     menuMobile.classList.toggle('active-menu-mobile')
     bodyElement.classList.toggle('active-menu-mobile')
 }
-
-// =============== SCROLL REVEAL SETTINGS ===============
-const scrollReveal = ScrollReveal({
-    origin: 'left',
-    distance: '40px',
-    duration: '800',
-    delay: 150
-})
-
-scrollReveal.reveal(`
-    .presentation-container_welcome,
-    .optionshelp-container_title,
-    .optionshelp-group_card,
-    .about-container,
-    .difference-container_description,
-    .difference-highlights_item,
-    .start-container,
-    .contact-container
-`)
-
-scrollReveal.reveal(`
-    .container-main_content,
-    .footer-container
-`, {origin: 'top'})
