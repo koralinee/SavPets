@@ -120,17 +120,24 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* =============== HEADER SETTINGS =============== */
 .header-content{
-    position: absolute;
+    position: fixed;
     background-color: var(--primary-color);
 
     width: var(--width-nav);
-    height: fit-content;
+    height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
     display: flex;
     flex-direction: column;
     z-index: 1000;
     
     transition: 300ms;
+}
+
+.header-content::-webkit-scrollbar {
+    display: none;
 }
 
 .header-content_begin{
