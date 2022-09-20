@@ -17,10 +17,10 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="./assets/css/hamburguer.css">
     <link rel="stylesheet" href="./assets/css/main-management.css">
-
+    <link rel="stylesheet" href="./assets/css/form.css">
 </head>
 
-<body class="panel">
+<body class="departament">
     <!--=============== HEADER ===============-->
     <header id="header" class="header-content">
         <div class="header-content_begin">
@@ -171,10 +171,13 @@
 
         <!--=============== TOP BAR ===============-->
         <section class="top-bar">
-            <a class="top-bar_path" href="./panel.html">Painel</a>
+            <div class="top-bar_breadcrumb">
+                <a class="top-bar_path" href="./panel.html">Painel</a>
+                <a class="top-bar_path" href="./departament.html">Departamentos</a>
+            </div>
     
             <div class="top-bar-options">    
-                <a href="./panel.html" class="option-quit">
+                <a href="./index.html" class="option-quit">
                     <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 8C9.20937 8 11 6.20937 11 4C11 1.79063 9.20937 0 7 0C4.79063 0 3 1.79063 3 4C3 6.20937 4.79063 8 7 8ZM9.8 9H9.27812C8.58437 9.31875 7.8125 9.5 7 9.5C6.1875 9.5 5.41875 9.31875 4.72188 9H4.2C1.88125 9 0 10.8812 0 13.2V14.5C0 15.3281 0.671875 16 1.5 16H12.5C13.3281 16 14 15.3281 14 14.5V13.2C14 10.8812 12.1188 9 9.8 9Z" fill="#525760"/>
                     </svg>
@@ -185,10 +188,32 @@
     
         <!--=============== CONTENT ===============-->
         <main class="main">
-            <section class="main-content">
-                <img class="main-content_img-default" src="./assets/img/panel-default.svg" alt="Desenho de uma pessoa organizando informações">
+            <section class="main-content main-register">
+                <div class="main-content_box">
+                    <a class="btn btn-cancel" href="./departament.html">
+                        <svg width="20" height="18" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.6429 0.326172H1.92857C0.863839 0.326172 0 1.19001 0 2.25474V16.3976C0 17.4623 0.863839 18.3262 1.92857 18.3262H18.6429C19.7076 18.3262 20.5714 17.4623 20.5714 16.3976V2.25474C20.5714 1.19001 19.7076 0.326172 18.6429 0.326172ZM15.2839 11.998C15.4768 12.1909 15.4768 12.5043 15.2839 12.6972L13.6567 14.3244C13.4638 14.5172 13.1504 14.5172 12.9576 14.3244L10.2857 11.6284L7.61384 14.3244C7.42098 14.5172 7.10759 14.5172 6.91473 14.3244L5.2875 12.6972C5.09464 12.5043 5.09464 12.1909 5.2875 11.998L7.98348 9.32617L5.2875 6.6543C5.09464 6.46144 5.09464 6.14805 5.2875 5.95519L6.91473 4.32796C7.10759 4.1351 7.42098 4.1351 7.61384 4.32796L10.2857 7.02394L12.9576 4.32796C13.1504 4.1351 13.4638 4.1351 13.6567 4.32796L15.2839 5.95519C15.4768 6.14805 15.4768 6.46144 15.2839 6.6543L12.5879 9.32617L15.2839 11.998Z" fill="#ffffff"/>
+                        </svg>
+                            
+                        Cancelar    
+                    </a>
 
-                <h3>Escolha qual opção desejar no menu lateral.</h3>
+                    <div class="main-container_form">
+                        <form class="form" action="" method="post">
+                            <div class="form-instruction">
+                                <p>Preenchimento obrigatório</p><span>*</span>
+                            </div>
+    
+                            <div class="form-dision">
+                                <input class="form-dision_inputfull" type="number" placeholder="Código *" name="code" value="1" required>
+                                <input class="form-dision_inputfull form-dision_top_right" type="text" placeholder="Nome *" value="Marketing" name="name" required>
+                                <input class="form-dision_inputfull form-dision_top_right" type="text" placeholder="Sigla *" value="MK" name="initials" required>
+                            </div>
+        
+                            <a href="./departament.html" class="btn">Atualizar</a>
+                        </form>
+                    </div>
+                </div>
             </section>
         </main>
     </section>
